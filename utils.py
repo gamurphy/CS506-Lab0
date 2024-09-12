@@ -42,8 +42,8 @@ def nearest_neighbor(target_vector, vectors):
     ### YOUR CODE HERE
     most_similar = cosine_similarity(vectors[0], target_vector)
     row = 0
-    for v in vectors:
-        if cosine_similarity(v, target_vector) < most_similar:
+    for v in enumerate(vectors):
+        if cosine_similarity(v, target_vector) > most_similar:
             most_similar = cosine_similarity
             row = v
         
